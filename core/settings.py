@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'apps.home'
+    'apps.home',
+    'apps.subscribers'
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,10 @@ EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS') == "True"
 EMAIL_PORT = os.getenv('EMAIL_PORT')
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+
+
+REST_FRAMEWORK = {
+    # Use PageNumberPagination as the default pagination class
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,  # Set the default page size
+}
