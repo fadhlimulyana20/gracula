@@ -29,9 +29,7 @@ class SubscriberSerializer(serializers.ModelSerializer):
         return super().update(instance, validated_data)
 
 class SubscriberListSerializer(serializers.ModelSerializer):
-    subscribers = SubscriberSerializer(many=True, read_only=True)
-
     class Meta:
         model = SubscriberList
-        fields = ['id', 'name', 'description', 'subscribers', 'created_at', 'updated_at']
+        fields = ['id', 'name', 'description', 'created_at', 'updated_at']
         read_only_fields = ['id', 'created_at', 'updated_at']

@@ -1,1 +1,2 @@
 from .subscriber_views import SubscriberViewSet
+from .subscriber_list_views import SubscriberListViewSet
